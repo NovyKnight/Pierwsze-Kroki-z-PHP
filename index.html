@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizytówka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Formluarz</h1>
+    <div id="form">
+
+        <form action="wynik.php" method="get" onsubmit="return form()">
+                Imie: <input type="text" name="imie" id="imie" pattern="[A-Za-z,ą,ę,ś,ć,ż,ź,ó,ł]+" title="Tylko litery są dozwolone!"><br>
+                Nazwisko: <input type="text" name="nazwisko" id="nazwisko" pattern="[A-Za-z,ą,ę,ś,ć,ż,ź,ó,ł]+" title="Tylko litery są dozwolone!"><br>
+                Adres zamieszkania: <input type="text" name="adres" id="adres"><br>
+                Nr Telefonu: <input type="number" name="numer" id="numer"><br>
+                E-mail: <input type="text" name="email" id="email"><br>
+                Płeć:  <input type="text" name="plec" id="plec"pattern="[M,K]+" title="Tylko M albo K"><br>
+                <input type="submit" >
+        </form>
+        
+
+    </div>
+    <script>
+        function form() {
+            var imie = document.getElementById("imie").value;
+            var nazwisko = document.getElementById("nazwisko").value;
+            var numer = document.getElementById("numer").value;
+            var adres = document.getElementById("adres").value;
+            var email = document.getElementById("email").value;
+            var plec = document.getElementById("plec").value;
+
+            if (imie === "" || nazwisko === "" || adres === "" || email === "" ||  numer === "" ||  plec === "") {
+                alert("Wszystkie pola muszą być wypełnione!");
+                return false;
+            }
+            
+            if (numer.length < 9 || numer.length > 9){
+                alert("To nie jest numer!");
+                return false;
+            }
+            if (plec.length > 1 || plec.length <1 ) {
+                alert("Musisz wybrać M albo K!")
+                return false;
+            }
+            return true;
+            
+
+            // 
+            
+        }
+        
+    </script>
+</body>
+</html>

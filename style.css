@@ -1,0 +1,21 @@
+body {
+    background-color: #CBD4C2;
+}
+h1 {
+    text-align: center;
+    margin-top: 40px;
+}
+#form {
+    text-align: center;
+    margin-top: 6rem;
+}
+h1::first-letter{
+    font-size: 65px;
+}
+#Button {
+    background-color: bisque;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+}
